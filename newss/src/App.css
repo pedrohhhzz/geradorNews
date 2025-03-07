@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Triodion&display=swap');
+
+
+@import "tailwindcss";
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/*inicio navbar*/
+
+.navbar{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.navbar-links{
+    display: none;
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    transition: color 0.3s ease ;
+}
+
+.navbar-item a:hover{
+    color: #7C3AED;
+}
+
+.card-container {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .navbar-links {
+      display: flex; 
+    }
+}
+
+/*fim nav bar*/
+
+
+.head{
+    text-align: center;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+
+/*place holder*/
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 30px;
+
+}
+
+.searchBar input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.searchBar input:focus {
+  border-color: #7C3AED;
+  box-shadow: 0 0 5px rgba(33, 11, 26, 0.5);
+}
+
+.searchBar button {
+  background-color: #7C3AED;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.searchBar button:hover {
+  background-color: #5900f2;
+}
+
+
+
+
+/*fim*/
+
+/*os cards de noticias*/
+
+
+/* Estilos para o container dos cards */
+.cardContainer {
+    display: flex;                /* Flexbox para organizar os cards em linha */
+    flex-wrap: wrap;              /* Permite que os cards se movam para a linha seguinte quando necessário */
+    gap: 30px;                    /* Espaçamento entre os cards */
+    justify-content: center;      /* Alinha os cards no centro */
+    margin: 100px;                 /* Margem externa */
+  }
+  
+  /* Estilos para cada card individual */
+  .card {
+    background-color: #fff;       /* Cor de fundo dos cards */
+    border-radius: 8px;           /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do card */
+    width: 280px;                 /* Largura fixa para cada card */
+    overflow: hidden;             /* Garante que a imagem ou conteúdo que ultrapassar o card seja escondido */
+    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+  }
+  
+  /* Estilos para a imagem dentro do card */
+  .card img {
+    width: 100%;                  /* A imagem ocupa toda a largura do card */
+    height: 160px;                /* Altura fixa para a imagem */
+    object-fit: cover;            /* Ajusta a imagem para cobrir o espaço sem deformação */
+  }
+  
+  /* Estilos para o conteúdo do card (título, descrição, etc.) */
+  .cardContent {
+    padding: 8px;                /* Espaçamento interno */
+  }
+  
+  .cardContent a {
+    font-size: 18px;              /* Tamanho da fonte do título */
+    font-weight: bold;            /* Deixa o título em negrito */
+    color: #333;                  /* Cor do título */
+    text-decoration: none;        /* Remove o sublinhado do link */
+    display: block;               /* Faz o título ocupar toda a largura disponível */
+    margin-bottom: 8px;           /* Espaçamento abaixo do título */
+    transition: color 0.3s ease;  /* Transição suave para a cor do título */
+  }
+  
+  .cardContent a:hover {
+    color:  #5900f2;            /* Cor do título quando passar o mouse */
+  }
+  
+  .cardContent p {
+    font-size: 14px;              /* Tamanho da fonte da descrição */
+    color: #666;                  /* Cor da descrição */
+    line-height: 1.6;             /* Espaçamento entre as linhas */
+    margin-bottom: 16px;          /* Espaçamento abaixo da descrição */
+  }
+  
+  .cardContent button {
+    background-color: #7C3AED;   /* Cor do botão */
+    color: #fff;                  /* Cor do texto no botão */
+    border: none;                 /* Remove a borda */
+    padding: 10px 20px;           /* Espaçamento interno do botão */
+    border-radius: 4px;           /* Bordas arredondadas */
+    cursor: pointer;             /* Cursor de ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Transição suave de cor */
+  }
+  
+  .cardContent button:hover {
+    background-color: #5900f2;    /* Cor de fundo do botão ao passar o mouse */
+  }
