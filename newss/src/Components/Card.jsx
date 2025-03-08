@@ -1,7 +1,12 @@
 import React from 'react'
 
 const Card = ({ data }) => {
-  console.log(data);
+console.log(data);
+
+const readMore = (url) =>{
+  window.open(url)
+}
+
   if (!Array.isArray(data)) {
     return <div>clique</div>;
   }
@@ -27,11 +32,11 @@ const Card = ({ data }) => {
 
         return (
           <div key={index} className='card'>
-            <img />
+            <img src={curItem.urlToImage}  />
             <div className='cardContent'>
               <a>{truncatedTitle}</a>
               <p>{truncatedDescription}</p>
-              <button>Leia Mais</button>
+              <button onClick={() => readMore(curItem.url)}>Leia Mais</button>
             </div>
           </div>
         );

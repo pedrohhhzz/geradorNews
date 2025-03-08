@@ -35,15 +35,18 @@ body {
     margin: 0;
 }
 
-.nav-item a{
-    text-decoration: none;
-    color: black;
-    font-weight: normal;
-    transition: color 0.3s ease ;
+.navbar-item button { 
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  transition: color 0.3s ease;
+  background: none; /* Remove fundo do botão */
+  border: none; /* Remove borda */
+  cursor: pointer;
 }
 
-.navbar-item a:hover{
-    color: #7C3AED;
+.navbar-item button:hover {
+  color: #7C3AED;
 }
 
 .card-container {

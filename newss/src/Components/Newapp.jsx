@@ -4,46 +4,42 @@ import '../App.css';
 import { Menu, X } from "lucide-react";
 
 const Newapp = () => {
-
-
-  const [search, setSearch] = useState("entretenimento");
-  const [newsData, setNewData] = useState(null)
+  const [search, setSearch] = useState("principais noticias");
+  const [newsData, setNewData] = useState(null);
   const API_KEY = "816a3d32096443feaed2bf9cc0dd4216";
 
-  const getData = async() => {
-    const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
+  const getData = async (query) => {
+    const response = await fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
     const jsonData = await response.json();
     console.log(jsonData);
-    setNewData(jsonData.articles); 
-    
-  }
-
-
+    setNewData(jsonData.articles);
+  };
 
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const navItems = [
-    { label: "Esportes", href: "#" },
-    { label: "Entretenimento", href: "#" },
-    { label: "Política", href: "#" }
+    { label: "Esportes", value: "esportes brasileiro" },
+    { label: "Entretenimento", value: "entretenimento" },
+    { label: "Política", value: "politica brasileira" }
   ];
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
 
-  const handleInput = (e) =>{
-    console.log(e.target.value);
-    setSearch(e.target.value)
-  }
+  // Função para alterar a pesquisa quando clicar no menu
+  const handleNavClick = (category) => {
+    setSearch(category);
+    getData(category);
+  };
+
+  const handleInput = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <div>
       <nav className='navbar'>
-
-   
-
-
         <div className='navbar-content'>
           <h1 className='navbar-title'>Newss</h1>
 
@@ -51,7 +47,7 @@ const Newapp = () => {
           <ul className='navbar-links hidden md:flex'>
             {navItems.map((item, index) => (
               <li key={index} className='navbar-item'>
-                <a href={item.href}>{item.label}</a>
+                <button onClick={() => handleNavClick(item.value)}>{item.label}</button>
               </li>
             ))}
           </ul>
@@ -69,23 +65,22 @@ const Newapp = () => {
           <ul>
             {navItems.map((item, index) => (
               <li key={index} className='mobile-menu-item'>
-                <a href={item.href}>{item.label}</a>
+                <button onClick={() => handleNavClick(item.value)}>{item.label}</button>
               </li>
             ))}
           </ul>
         </div>
       )}
 
-<div className='head' >Fique Atualizado!!!</div>
+      <div className='head'>Fique Atualizado!!!</div>
 
-
-<div className='searchBar' >
-      <input type='text' placeholder='Pesquisar' onChange={handleInput} ></input>
-      <button onClick={getData} >Pesquisar</button>
-    </div>
+      <div className='searchBar'>
+        <input type='text' placeholder='Pesquisar' onChange={handleInput} />
+        <button onClick={() => getData(search)}>Pesquisar</button>
+      </div>
 
       <div>
-      <Card data={newsData} />
+        {newsData ? <Card data={newsData} /> : null}
       </div>
     </div>
   );
