@@ -21,4 +21,11 @@
 # Como foi feito?
 ### API News
 - A News Api é uma api de pesquisa de artigos.
+  ![Image](https://github.com/user-attachments/assets/85a3e981-3093-47c3-b5e5-334ba174c2e4)
+Chamada para api, a função assincrona recebe como parametro query que a pesquisa, fetch é arequisição https para a api externa
+o endpoint é `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`
+
+### menu responsivo
+- Usando tailwindcss
+  
 
