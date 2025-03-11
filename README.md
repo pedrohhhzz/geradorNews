@@ -26,6 +26,23 @@ Chamada para api, a função assincrona recebe como parametro query que a pesqui
 o endpoint é `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`
 
 ### menu responsivo
-- Usando tailwindcss
+- Usando tailwindcss para estilizar o botão do menu
+![Image](https://github.com/user-attachments/assets/7b69bc9a-02d3-46e4-82b9-80b52ec5402d)
+
+![image](https://github.com/user-attachments/assets/d5b508a3-52d5-4743-852e-8538ef119171)
+
+![image](https://github.com/user-attachments/assets/125dde59-577e-44a9-84dc-73aeca12a74e)
+
+## Componente card
+- o componente card foi utilizado para exibir as notícias
+  
+![image](https://github.com/user-attachments/assets/5c6603fa-0213-4a02-8c09-8026bce5cb41)
+
+![image](https://github.com/user-attachments/assets/1d2a22d1-2425-4f7d-bb86-efc21bfb73f6)
+
+- foi utilizada a função slice para diminuir a quantidade de caracteres da descrição e titulo.
+
+
+
   
 
